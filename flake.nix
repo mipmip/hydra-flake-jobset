@@ -11,5 +11,10 @@
 
     packages.x86_64-linux.default = self.packages.x86_64-linux.fortune;
 
+    # Hydra jobset for building the fortune package
+    hydraJobs = {
+      fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
+    };
+
   };
 }
