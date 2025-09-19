@@ -20,6 +20,7 @@
     hydraJobs = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
+      hello.x86_64-linux = self.packages.x86_64-linux.cowsay;
 
       tester-readme = pkgs.runCommand "readme" { } ''
         echo hello worl
