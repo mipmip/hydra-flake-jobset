@@ -27,6 +27,7 @@
         echo hello worl
         mkdir -p $out/nix-support
         echo "# A readme" > $out/readme.md
+        echo "A readme" >> $out/readme.md
         echo "doc readme $out/readme.md" >> $out/nix-support/hydra-build-products
         '';
     };
