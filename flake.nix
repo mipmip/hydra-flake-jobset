@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
   };
 
   outputs = { self, nixpkgs }:
@@ -21,44 +21,44 @@
     hydraJobs = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
-      #hello.x86_64-linux = self.packages.x86_64-linux.hello;
+      hello.x86_64-linux = self.packages.x86_64-linux.hello;
 
 
-      sample.x86_64-linux = derivation {
-        # A name for the derivation (whatever you choose)
-        name = "hello-text";
-        # The system realising the derivation
-        system = "x86_64-linux";
-        # The program realising the derivation
-        builder = "bash";
-        # Arguments passed to the builder program
-        args = ["-c" "mkdir $out && echo Hello world3 > $out/hello.txt"];
-      };
+        #      sample.x86_64-linux = derivation {
+        #        # A name for the derivation (whatever you choose)
+        #        name = "hello-text";
+        #        # The system realising the derivation
+        #        system = "x86_64-linux";
+        #        # The program realising the derivation
+        #        builder = "bash";
+        #        # Arguments passed to the builder program
+        #        args = ["-c" "mkdir $out && echo Hello world3 > $out/hello.txt"];
+        #      };
 
-      tester-readme = pkgs.runCommand "readme" { } ''
-        echo hello world
-        #mkdir -p $out/nix-support
-        echo "# A readme" > $out/readme.md
-        echo "A readme" >> $out/readme.md
-        echo "A readme" >> $out/readme.md
-        #echo "doc readme $out/readme.md" >> $out/nix-support/hydra-build-products
-        '';
+        #      tester-readme = pkgs.runCommand "readme" { } ''
+        #        echo hello world
+        #        #mkdir -p $out/nix-support
+        #        echo "# A readme" > $out/readme.md
+        #        echo "A readme" >> $out/readme.md
+        #        echo "A readme" >> $out/readme.md
+        #        #echo "doc readme $out/readme.md" >> $out/nix-support/hydra-build-products
+        #        '';
     };
 
     hydraJobs2 = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
       hello.x86_64-linux = self.packages.x86_64-linux.hello;
-      sample2.x86_64-linux = derivation {
-        # A name for the derivation (whatever you choose)
-        name = "hello-text2";
-        # The system realising the derivation
-        system = "x86_64-linux";
-        # The program realising the derivation
-        builder = "bash";
-        # Arguments passed to the builder program
-        args = ["-c" "mkdir $out && echo Hello world4 > $out/hello.txt"];
-      };
+        #      sample2.x86_64-linux = derivation {
+        #        # A name for the derivation (whatever you choose)
+        #        name = "hello-text2";
+        #        # The system realising the derivation
+        #        system = "x86_64-linux";
+        #        # The program realising the derivation
+        #        builder = "bash";
+        #        # Arguments passed to the builder program
+        #        args = ["-c" "mkdir $out && echo Hello world4 > $out/hello.txt"];
+        #      };
 
     };
 
