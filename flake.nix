@@ -21,7 +21,7 @@
     hydraJobs = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
-      hello.x86_64-linux = self.packages.x86_64-linux.hello;
+      #hello.x86_64-linux = self.packages.x86_64-linux.hello;
 
       tester-readme = pkgs.runCommand "readme" { } ''
         echo hello worl
@@ -35,7 +35,7 @@
     hydraJobs2 = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
-      #hello.x86_64-linux = self.packages.x86_64-linux.hello;
+      hello.x86_64-linux = self.packages.x86_64-linux.hello;
 
     };
 
