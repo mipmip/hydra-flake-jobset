@@ -32,7 +32,7 @@
         # The program realising the derivation
         builder = "bash";
         # Arguments passed to the builder program
-        args = ["-c" "mkdir $out && echo Hello world2 > $out/hello.txt"];
+        args = ["-c" "mkdir $out && echo Hello world3 > $out/hello.txt"];
       };
 
       tester-readme = pkgs.runCommand "readme" { } ''
