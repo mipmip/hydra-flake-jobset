@@ -23,6 +23,18 @@
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
       #hello.x86_64-linux = self.packages.x86_64-linux.hello;
 
+
+      sample.x86_64-linux = derivation {
+        # A name for the derivation (whatever you choose)
+        name = "hello-text";
+        # The system realising the derivation
+        system = "x86_64-linux";
+        # The program realising the derivation
+        builder = "bash";
+        # Arguments passed to the builder program
+        args = ["-c" "mkdir $out && echo Hello world > $out/hello.txt"];
+      };
+
       tester-readme = pkgs.runCommand "readme" { } ''
         echo hello world
         #mkdir -p $out/nix-support
