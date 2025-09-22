@@ -35,15 +35,8 @@
     hydraJobs2 = {
       fortune.x86_64-linux = self.packages.x86_64-linux.fortune;
       cowsay.x86_64-linux = self.packages.x86_64-linux.cowsay;
-      hello.x86_64-linux = self.packages.x86_64-linux.hello;
+      #hello.x86_64-linux = self.packages.x86_64-linux.hello;
 
-      tester-readme = pkgs.runCommand "readme" { } ''
-        echo hello worl
-        mkdir -p $out/nix-support
-        echo "# A readme" > $out/readme.md
-        echo "A readme" >> $out/readme.md
-        echo "doc readme $out/readme.md" >> $out/nix-support/hydra-build-products
-        '';
     };
 
   };
